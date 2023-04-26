@@ -1,0 +1,15 @@
+.Button-wrapper,
+.Button-inner-wrapper {
+  display: flex;
+}
+
+.Button-wrapper {
+  border-radius: 10px;
+}
+
+.Button-inner-wrapper {
+  justify-content: space-between;
+  align-items: center;
+  min-width: 180px;
+  padding: 20px;
+}

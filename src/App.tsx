@@ -1,24 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import { IPage } from './model/page';
+import PrivateRoute from './components/PrivateRoute';
+import { ColorPalette } from './model/colors';
 
-function App() {
+interface IPages {
+  privatePages: IPage[];
+  publicPages: IPage[];
+}
+
+function App({ privatePages, publicPages }: IPages) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      className='App-wrapper'
+      style={{ backgroundColor: ColorPalette.BACKGROUND }}>
+      <div className='App'>
+        <Routes>
+          {privatePages.map(({ url, component }, key) => (
+            <Route
+              key={key}
+              path={`/${url}`}
+              element={<PrivateRoute PrivateComponent={component} />}
+            />
+          ))}
+          {publicPages.map(({ url, component }, key) => (
+            <Route key={key} path={`/${url}`} element={component} />
+          ))}
+        </Routes>
+      </div>
     </div>
   );
 }

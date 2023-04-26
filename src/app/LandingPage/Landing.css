@@ -1,0 +1,26 @@
+.Landing-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  height: 100%;
+}
+
+.Landing-header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Landing-header-text {
+  font-weight: 300;
+  font-size: 25px;
+  opacity: 90%;
+}
+
+.Landing-header-logo {
+  font-size: 50px;
+  font-weight: 700;
+  margin: 20px 0;
+}

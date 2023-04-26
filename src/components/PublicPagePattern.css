@@ -1,0 +1,14 @@
+.PublicPagePattern-TOP,
+.PublicPagePattern-BOTTOM {
+  position: fixed;
+  overflow: hidden;
+}
+
+.PublicPagePattern-TOP {
+  top: 0;
+}
+
+.PublicPagePattern-BOTTOM {
+  bottom: 0;
+  transform: rotate(180deg);
+}
