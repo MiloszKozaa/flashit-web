@@ -20,4 +20,6 @@ input::placeholder {
 :-webkit-autofill:focus {
   box-shadow: 0 0 0px 1000px #201f29 inset;
   -webkit-text-fill-color: #fff;
+  outline: none;
+  border: none;
 }

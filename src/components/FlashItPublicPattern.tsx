@@ -12,9 +12,14 @@ const FlashItPublicPattern = ({
 }: FlashItPublicPatternType) => {
   return (
     <div className={`FlashItPublicPattern`}>
-      <TrianglePattern color={color} />
-      {children}
-      <TrianglePattern color={color} style={{ transform: 'rotate(180deg)' }} />
+      <div className='FlashItPublicPattern-triangles'>
+        <TrianglePattern color={color} />
+        <TrianglePattern
+          color={color}
+          style={{ transform: 'rotate(180deg)' }}
+        />
+      </div>
+      <div className='FlashItPublicPattern-children'>{children}</div>
     </div>
   );
 };
