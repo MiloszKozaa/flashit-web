@@ -1,0 +1,7 @@
+.FunctionalWrapper {
+  display: flex;
+  border-radius: 10px;
+  padding: 20px;
+  transition: 0.3s;
+  max-width: 290px;
+}

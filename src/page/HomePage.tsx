@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const Home = () => {
+const HomePage = () => {
   useEffect(() => {
     // const logIn = fetch('http://localhost:9002/user', {
     //   method: 'GET',
@@ -18,7 +18,7 @@ const Home = () => {
     //   credentials: 'include' as RequestCredentials,
     // });
   }, []);
-  return <div>Home</div>;
+  return <div>HomePage</div>;
 };
 
-export default Home;
+export default HomePage;

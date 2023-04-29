@@ -1,15 +1,17 @@
 type TrianglePatternType = {
   color: string;
+  style?: {};
 };
 
-const TrianglePattern = ({ color }: TrianglePatternType) => {
+const TrianglePattern = ({ color, style }: TrianglePatternType) => {
   return (
     <svg
       width='1920'
       height='135'
       viewBox='0 0 1920 135'
       fill='none'
-      xmlns='http://www.w3.org/2000/svg'>
+      xmlns='http://www.w3.org/2000/svg'
+      style={style}>
       <rect
         x='425.968'
         y='-74.5156'
@@ -18,7 +20,7 @@ const TrianglePattern = ({ color }: TrianglePatternType) => {
         rx='20'
         transform='rotate(135 425.968 -74.5156)'
         fill={color}
-        fill-opacity='0.8'
+        fillOpacity='0.8'
       />
       <rect
         x='840.968'
@@ -28,7 +30,7 @@ const TrianglePattern = ({ color }: TrianglePatternType) => {
         rx='20'
         transform='rotate(135 840.968 -74.5156)'
         fill={color}
-        fill-opacity='0.8'
+        fillOpacity='0.8'
       />
       <rect
         x='247.968'
@@ -38,7 +40,7 @@ const TrianglePattern = ({ color }: TrianglePatternType) => {
         rx='20'
         transform='rotate(135 247.968 -42.5156)'
         fill={color}
-        fill-opacity='0.8'
+        fillOpacity='0.8'
       />
       <rect
         x='662.968'
@@ -48,7 +50,7 @@ const TrianglePattern = ({ color }: TrianglePatternType) => {
         rx='20'
         transform='rotate(135 662.968 -42.5156)'
         fill={color}
-        fill-opacity='0.8'
+        fillOpacity='0.8'
       />
       <rect
         x='348.968'
@@ -94,7 +96,7 @@ const TrianglePattern = ({ color }: TrianglePatternType) => {
         rx='20'
         transform='rotate(135 1255.97 -74.5156)'
         fill={color}
-        fill-opacity='0.8'
+        fillOpacity='0.8'
       />
       <rect
         x='1670.97'
@@ -104,7 +106,7 @@ const TrianglePattern = ({ color }: TrianglePatternType) => {
         rx='20'
         transform='rotate(135 1670.97 -74.5156)'
         fill={color}
-        fill-opacity='0.8'
+        fillOpacity='0.8'
       />
       <rect
         x='2085.97'
@@ -114,7 +116,7 @@ const TrianglePattern = ({ color }: TrianglePatternType) => {
         rx='20'
         transform='rotate(135 2085.97 -74.5156)'
         fill={color}
-        fill-opacity='0.8'
+        fillOpacity='0.8'
       />
       <rect
         x='1492.97'
@@ -124,7 +126,7 @@ const TrianglePattern = ({ color }: TrianglePatternType) => {
         rx='20'
         transform='rotate(135 1492.97 -42.5156)'
         fill={color}
-        fill-opacity='0.8'
+        fillOpacity='0.8'
       />
       <rect
         x='1077.97'
@@ -134,7 +136,7 @@ const TrianglePattern = ({ color }: TrianglePatternType) => {
         rx='20'
         transform='rotate(135 1077.97 -42.5156)'
         fill={color}
-        fill-opacity='0.8'
+        fillOpacity='0.8'
       />
       <rect
         x='1593.97'
@@ -153,7 +155,7 @@ const TrianglePattern = ({ color }: TrianglePatternType) => {
         rx='20'
         transform='rotate(135 1907.97 -42.5156)'
         fill={color}
-        fill-opacity='0.8'
+        fillOpacity='0.8'
       />
       <rect
         x='1390.97'

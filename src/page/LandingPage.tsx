@@ -1,4 +1,4 @@
-import Landing from '../app/LandingPage/Landing';
+import Landing from '../modules/Landing/Landing';
 
 const LandingPage = () => {
   return <Landing />;

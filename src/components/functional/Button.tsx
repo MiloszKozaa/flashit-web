@@ -1,23 +1,32 @@
 import { Link } from 'react-router-dom';
-import ArrowIcon from '../assets/icons/ArrowIcon';
 import './Button.css';
 
-export type ButtonType = {
+type ButtonType = {
   path: string;
   name: string;
   color: string;
   backgroundColor: string;
+  IconComponent: JSX.Element;
+  onButtonClick?: () => void;
 };
 
-const Button = ({ path, name, color, backgroundColor }: ButtonType) => {
+const Button = ({
+  path,
+  name,
+  color,
+  backgroundColor,
+  IconComponent,
+  onButtonClick,
+}: ButtonType) => {
   return (
     <div
       className='Button-wrapper'
-      style={{ backgroundColor: backgroundColor, color: color }}>
+      style={{ backgroundColor: backgroundColor, color: color }}
+      onClick={onButtonClick}>
       <Link to={path} style={{ color: color }}>
         <div className='Button-inner-wrapper'>
           <div className='Button-name'>{name}</div>
-          <ArrowIcon color={color} />
+          {IconComponent}
         </div>
       </Link>
     </div>

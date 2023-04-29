@@ -1,5 +1,7 @@
-const Register = () => {
-  return <div>Register</div>;
+import Register from '../modules/Register/Register';
+
+const RegisterPage = () => {
+  return <Register/>;
 };
 
-export default Register;
+export default RegisterPage;
