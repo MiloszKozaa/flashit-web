@@ -3,7 +3,6 @@ import EmailIcon from '../../assets/icons/EmailIcon';
 import SearchIcon from '../../assets/icons/SearchIcon';
 import WarningIcon from '../../assets/icons/WarningIcon';
 import { ColorPalette } from '../../model/colors';
-import './Input.css';
 import ArrowIcon from '../../assets/icons/ArrowIcon';
 import FunctionalWrapper from '../FunctionalWrapper';
 

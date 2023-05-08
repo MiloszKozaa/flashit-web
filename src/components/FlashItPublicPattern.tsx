@@ -18,11 +18,10 @@ const FlashItPublicPattern = ({
       <div className='FlashItPublicPattern-triangles-bottom'>
         <TrianglePattern
           color={color}
-          style={{ transform: 'rotate(180deg)' }}
+          style={{ transform: 'rotate(180deg) translateY(-5px)' }}
         />
       </div>
-
-      <div>{children}</div>
+      <div className='FlashItPublicPattern-children'>{children}</div>
     </div>
   );
 };

@@ -4,9 +4,10 @@ import EmailIcon from '../../assets/icons/EmailIcon';
 import FlashItPublicPattern from '../../components/FlashItPublicPattern';
 import Button from '../../components/functional/Button';
 import Input from '../../components/functional/Input';
-import ErrorMessage from '../../components/warining/ErrorMessage';
+import ErrorMessage from '../../components/form/ErrorMessage';
 import { ColorPalette } from '../../model/colors';
 import './Register.css';
+import LinkToForm from '../../components/form/LinkToForm';
 
 const Register = () => {
   const [error, setError] = useState<string>();
@@ -38,6 +39,12 @@ const Register = () => {
           color={ColorPalette.PRIMARY}
           backgroundColor={ColorPalette.EMPTY}
           IconComponent={<ArrowIcon color={ColorPalette.PRIMARY} />}
+        />
+        <LinkToForm
+          text='Have an account?'
+          link='Log In'
+          path='login'
+          color={ColorPalette.PRIMARY}
         />
       </div>
     </FlashItPublicPattern>
