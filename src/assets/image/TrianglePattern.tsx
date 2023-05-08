@@ -6,12 +6,10 @@ type TrianglePatternType = {
 const TrianglePattern = ({ color, style }: TrianglePatternType) => {
   return (
     <svg
-      width='1920'
       height='135'
-      viewBox='0 0 1920 135'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
-      style={style}>
+      style={{ ...style, width: '100vw' }}>
       <rect
         x='425.968'
         y='-74.5156'
