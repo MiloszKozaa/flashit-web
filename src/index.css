@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding: 0;
+  min-height: -webkit-fill-available;
 }
 
 code {
@@ -63,11 +64,4 @@ form {
 
 ::-webkit-scrollbar {
   display: none;
-}
-
-html,
-body,
-.App-wrapper,
-.App-wrapper > div {
-  height: 100%;
 }
