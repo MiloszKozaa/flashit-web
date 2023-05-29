@@ -3,6 +3,7 @@ import './App.css';
 import { IPage } from './model/page';
 import PrivateRoute from './components/PrivateRoute';
 import { ColorPalette } from './model/colors';
+import useVH from 'react-viewport-height';
 
 interface IPages {
   privatePages: IPage[];
@@ -10,10 +11,15 @@ interface IPages {
 }
 
 function App({ privatePages, publicPages }: IPages) {
+  const vh = useVH();
+
   return (
     <div
       className='App-wrapper'
-      style={{ backgroundColor: ColorPalette.BACKGROUND }}>
+      style={{
+        backgroundColor: ColorPalette.BACKGROUND,
+        // height: `${100 * vh}px`,
+      }}>
       <div className='App'>
         <Routes>
           {privatePages.map(({ url, component }, key) => (
