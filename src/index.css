@@ -39,10 +39,26 @@ input::placeholder {
   border: none;
 }
 
-
 a {
   text-decoration: none;
   font-weight: 600;
+}
+
+button {
+  font-family: 'Lexend', sans-serif;
+  background: none;
+  border: none;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0;
+  margin: 0;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 ::-webkit-scrollbar {

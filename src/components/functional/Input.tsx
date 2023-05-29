@@ -5,6 +5,8 @@ import WarningIcon from '../../assets/icons/WarningIcon';
 import { ColorPalette } from '../../model/colors';
 import ArrowIcon from '../../assets/icons/ArrowIcon';
 import FunctionalWrapper from '../FunctionalWrapper';
+import { errorMonitor } from 'stream';
+import LockIcon from '../../assets/icons/LockIcon';
 
 type InputType = {
   type: string;
@@ -19,6 +21,10 @@ const inputIcon = (id: string, color: string) => {
   switch (id) {
     case 'email':
       return <EmailIcon color={color} />;
+
+    case 'confirmPassword':
+    case 'password':
+      return <LockIcon color={color} />;
 
     default:
       return <SearchIcon color={color} />;
@@ -51,9 +57,9 @@ const Input = ({
         type={type}
         id={id}
         placeholder={placeholder}
+        {...yup}
         onFocus={() => setColorByError(error, ColorPalette.PRIMARY)}
         onBlur={() => setColorByError(error, ColorPalette.ACCESSORY)}
-        {...yup}
       />
       <WarningIcon
         color={error ? ColorPalette.ERROR : ColorPalette.BACKGROUND}

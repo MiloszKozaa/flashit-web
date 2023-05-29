@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import ArrowIcon from '../../assets/icons/ArrowIcon';
-import EmailIcon from '../../assets/icons/EmailIcon';
 import Button from '../../components/functional/Button';
 import Input from '../../components/functional/Input';
 import ErrorMessage from '../../components/form/ErrorMessage';
@@ -12,15 +11,16 @@ import { useForm } from 'react-hook-form';
 import { useMutation } from 'react-query';
 import { callApi } from '../../services/api/callApi';
 import { useNavigate } from 'react-router-dom';
-import PublicForm from '../../components/form/PublicForm';
+import { yupLogIn } from '../../services/yup/logIn';
 import { IPublicForm } from '../../model/publicForm';
+import PublicForm from '../../components/form/PublicForm';
 
-const Register = () => {
+const LogIn = () => {
   const navigate = useNavigate();
 
   const { mutate, data, status } = useMutation({
     mutationKey: ['user'],
-    mutationFn: (body: IPublicForm) => callApi('user/', 'POST', body),
+    mutationFn: (body: IPublicForm) => callApi('user/login', 'POST', body),
   });
 
   const [formError, setFormError] = useState<string>();
@@ -31,18 +31,19 @@ const Register = () => {
     formState: { errors },
     reset,
   } = useForm({
-    resolver: yupResolver(yupRegister),
+    resolver: yupResolver(yupLogIn),
   });
 
   const onSubmit = (data: any) => {
+    console.log(data);
     mutate({ email: data.email, password: data.password });
   };
 
   useEffect(() => {
     if (data) {
       if (status === 'success' && data.status === 200) {
-        console.log('Navigating to log in');
-        navigate('/login');
+        console.log('Navigating to home');
+        navigate('/home');
       }
       setFormError(data.error);
     }
@@ -52,8 +53,8 @@ const Register = () => {
     <PublicForm
       onSubmit={handleSubmit(onSubmit)}
       error={formError}
-      heder='Hello'
-      description='We need some informations to create your new account'>
+      heder='Welcome back'
+      description='We are glad to see you again, enter necessary fields to continue'>
       <Input
         type={'text'}
         id={'email'}
@@ -68,27 +69,20 @@ const Register = () => {
         error={errors.password?.message}
         yup={{ ...register('password') }}
       />
-      <Input
-        type={'password'}
-        id={'confirmPassword'}
-        placeholder={'confirm password'}
-        error={errors.confirmPassword?.message}
-        yup={{ ...register('confirmPassword') }}
-      />
       <Button
-        name='Create account'
-        color={ColorPalette.PRIMARY}
-        backgroundColor={ColorPalette.EMPTY}
-        IconComponent={<ArrowIcon color={ColorPalette.PRIMARY} />}
+        name='Log In'
+        color={ColorPalette.EMPTY}
+        backgroundColor={ColorPalette.PRIMARY}
+        IconComponent={<ArrowIcon color={ColorPalette.EMPTY} />}
       />
       <LinkToForm
-        text='Have an account?'
-        link='Log In'
-        path='login'
+        text={`Don't have an account?`}
+        link='Register'
+        path='register'
         color={ColorPalette.PRIMARY}
       />
     </PublicForm>
   );
 };
 
-export default Register;
+export default LogIn;

@@ -8,9 +8,17 @@ type ErrorMessageType = {
 
 const ErrorMessage = ({ error }: ErrorMessageType) => {
   return (
-    <FunctionalWrapper style={{ border: `2px ${ColorPalette.ERROR} solid` }}>
-      {error}
-      <WarningIcon color={ColorPalette.ERROR} />
+    <FunctionalWrapper
+      style={{
+        border: `2px ${ColorPalette.ERROR} solid`,
+        backgroundColor: 'rgba(254, 66, 60, 0.2)',
+        gap: '20px',
+        alignItems: 'center',
+      }}>
+      <div style={{ maxWidth: 'calc(290px - 4*20 + 4)' }}>{error}</div>
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <WarningIcon color={ColorPalette.ERROR} />
+      </div>
     </FunctionalWrapper>
   );
 };

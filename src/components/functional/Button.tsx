@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Button.css';
 
 type ButtonType = {
-  path: string;
+  path?: string;
   name: string;
   color: string;
   backgroundColor: string;
@@ -18,18 +18,32 @@ const Button = ({
   IconComponent,
   onButtonClick,
 }: ButtonType) => {
+  const navigate = useNavigate();
+
   return (
-    <div
-      className='Button-wrapper'
-      style={{ backgroundColor: backgroundColor, color: color }}
-      onClick={onButtonClick}>
-      <Link to={path} style={{ color: color }}>
-        <div className='Button-inner-wrapper'>
-          <div className='Button-name'>{name}</div>
-          {IconComponent}
+    <button onClick={onButtonClick}>
+      {path ? (
+        <div
+          className='Button-wrapper'
+          style={{ backgroundColor: backgroundColor, color: color }}>
+          <Link to={path} style={{ color: color }}>
+            <div className='Button-inner-wrapper'>
+              <div className='Button-name'>{name}</div>
+              {IconComponent}
+            </div>
+          </Link>
         </div>
-      </Link>
-    </div>
+      ) : (
+        <div
+          className='Button-wrapper'
+          style={{ backgroundColor: backgroundColor, color: color }}>
+          <div className='Button-inner-wrapper'>
+            <div className='Button-name'>{name}</div>
+            {IconComponent}
+          </div>
+        </div>
+      )}
+    </button>
   );
 };
 
