@@ -64,3 +64,10 @@ form {
 ::-webkit-scrollbar {
   display: none;
 }
+
+html,
+body,
+.App-wrapper,
+.App-wrapper > div {
+  height: 100%;
+}
