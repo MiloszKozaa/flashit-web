@@ -33,10 +33,11 @@ input::placeholder {
 :-webkit-autofill,
 :-webkit-autofill:hover,
 :-webkit-autofill:focus {
-  box-shadow: 0 0 0px 1000px #201f29 inset;
-  -webkit-text-fill-color: #fff;
+  border: 0px;
   outline: none;
-  border: none;
+  -webkit-box-shadow: 0 0 0px 1000px #201f29 inset;
+  -webkit-text-fill-color: #fff;
+  transition: background-color 60000000s 0s, color 60000000s 0s;
 }
 
 a {

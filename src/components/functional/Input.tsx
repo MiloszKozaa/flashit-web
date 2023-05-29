@@ -7,6 +7,7 @@ import ArrowIcon from '../../assets/icons/ArrowIcon';
 import FunctionalWrapper from '../FunctionalWrapper';
 import { errorMonitor } from 'stream';
 import LockIcon from '../../assets/icons/LockIcon';
+import { getIconByName } from '../../services/icons/getIconByName';
 
 type InputType = {
   type: string;
@@ -15,20 +16,6 @@ type InputType = {
   yup?: any;
   error?: any;
   IconComponent?: JSX.Element;
-};
-
-const inputIcon = (id: string, color: string) => {
-  switch (id) {
-    case 'email':
-      return <EmailIcon color={color} />;
-
-    case 'confirmPassword':
-    case 'password':
-      return <LockIcon color={color} />;
-
-    default:
-      return <SearchIcon color={color} />;
-  }
 };
 
 const Input = ({
@@ -50,7 +37,7 @@ const Input = ({
 
   return (
     <FunctionalWrapper style={{ border: `2px ${color} solid` }}>
-      {inputIcon(id, color)}
+      {getIconByName(id, color)}
       <input
         className='Input'
         style={{ color: ColorPalette.EMPTY }}

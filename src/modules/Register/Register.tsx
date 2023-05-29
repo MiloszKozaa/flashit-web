@@ -64,7 +64,7 @@ const Register = () => {
       <Input
         type={'password'}
         id={'password'}
-        placeholder={'password'}
+        placeholder={'min 6 characters'}
         error={errors.password?.message}
         yup={{ ...register('password') }}
       />
