@@ -18,7 +18,7 @@ function App({ privatePages, publicPages }: IPages) {
       className='App-wrapper'
       style={{
         backgroundColor: ColorPalette.BACKGROUND,
-        // height: `${100 * vh}px`,
+        height: `${100 * vh}px`,
       }}>
       <div className='App'>
         <Routes>
