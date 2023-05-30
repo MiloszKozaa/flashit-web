@@ -3,12 +3,17 @@ import { useNavigate } from 'react-router-dom';
 import { IUser } from '../model/user';
 import { getApi } from '../services/api/callApi';
 import { useEffect } from 'react';
+import Navbar from './navbar/Navbar';
 
 interface IPrivateRoute {
   PrivateComponent: JSX.Element;
+  isNavbarDisplayed: boolean;
 }
 
-const PrivateRoute = ({ PrivateComponent }: IPrivateRoute) => {
+const PrivateRoute = ({
+  PrivateComponent,
+  isNavbarDisplayed,
+}: IPrivateRoute) => {
   const navigate = useNavigate();
 
   const { data, status } = useQuery({
@@ -25,7 +30,12 @@ const PrivateRoute = ({ PrivateComponent }: IPrivateRoute) => {
     }
   }, [data]);
 
-  return PrivateComponent;
+  return (
+    <>
+      {isNavbarDisplayed && <Navbar />}
+      {PrivateComponent}
+    </>
+  );
 };
 
 export default PrivateRoute;

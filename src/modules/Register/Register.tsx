@@ -81,12 +81,12 @@ const Register = () => {
         backgroundColor={ColorPalette.EMPTY}
         IconComponent={<ArrowIcon color={ColorPalette.PRIMARY} />}
       />
-      <LinkToForm
+      {/* <LinkToForm
         text='Have an account?'
         link='Log In'
         path='login'
         color={ColorPalette.PRIMARY}
-      />
+      /> */}
     </PublicForm>
   );
 };

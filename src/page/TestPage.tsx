@@ -1,5 +1,7 @@
+import TestWidthComponent from '../components/TestWidthComponent';
+
 const TestPage = () => {
-  return <div>TestPage</div>;
+  return <TestWidthComponent />;
 };
 
 export default TestPage;

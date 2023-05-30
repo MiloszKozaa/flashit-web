@@ -4,6 +4,8 @@ import { IPage } from './model/page';
 import PrivateRoute from './components/PrivateRoute';
 import { ColorPalette } from './model/colors';
 import useVH from 'react-viewport-height';
+import Navbar from './components/navbar/Navbar';
+import { Fragment } from 'react';
 
 interface IPages {
   privatePages: IPage[];
@@ -22,11 +24,16 @@ function App({ privatePages, publicPages }: IPages) {
       }}>
       <div className='App'>
         <Routes>
-          {privatePages.map(({ url, component }, key) => (
+          {privatePages.map(({ url, component, isNavbarDisplayed }, key) => (
             <Route
               key={key}
               path={`/${url}`}
-              element={<PrivateRoute PrivateComponent={component} />}
+              element={
+                <PrivateRoute
+                  PrivateComponent={component}
+                  isNavbarDisplayed={!!isNavbarDisplayed}
+                />
+              }
             />
           ))}
           {publicPages.map(({ url, component }, key) => (

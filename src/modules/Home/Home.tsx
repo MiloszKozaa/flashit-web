@@ -1,11 +1,11 @@
-import SearchIcon from '../../assets/icons/SearchIcon';
-import Navbar from '../../components/navbar/Navbar';
-import NavbarLink from '../../components/navbar/NavbarLink';
+import TestWidthComponent from '../../components/TestWidthComponent';
 
 const Home = () => {
   return (
     <div className='Home-wrapper'>
-     <Navbar />
+      Home Page
+      welcomen
+      
     </div>
   );
 };

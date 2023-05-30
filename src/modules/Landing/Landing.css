@@ -4,6 +4,7 @@
   justify-content: center;
   flex-direction: column;
   gap: 30px;
+  width: 100%;
 }
 
 .Landing-header {
@@ -22,4 +23,11 @@
   font-size: 50px;
   font-weight: 700;
   margin: 20px 0;
+  text-align: center;
+}
+
+.Landing-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }

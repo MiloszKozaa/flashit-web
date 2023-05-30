@@ -18,29 +18,21 @@ const Button = ({
   IconComponent,
   onButtonClick,
 }: ButtonType) => {
-  const navigate = useNavigate();
-
   return (
-    <button onClick={onButtonClick}>
+    <button
+      onClick={onButtonClick}
+      style={{ backgroundColor: backgroundColor, color: color }}>
       {path ? (
-        <div
-          className='Button-wrapper'
-          style={{ backgroundColor: backgroundColor, color: color }}>
-          <Link to={path} style={{ color: color }}>
-            <div className='Button-inner-wrapper'>
-              <div className='Button-name'>{name}</div>
-              {IconComponent}
-            </div>
-          </Link>
-        </div>
-      ) : (
-        <div
-          className='Button-wrapper'
-          style={{ backgroundColor: backgroundColor, color: color }}>
+        <Link to={path} style={{ color: color }}>
           <div className='Button-inner-wrapper'>
             <div className='Button-name'>{name}</div>
             {IconComponent}
           </div>
+        </Link>
+      ) : (
+        <div className='Button-inner-wrapper'>
+          <div className='Button-name'>{name}</div>
+          {IconComponent}
         </div>
       )}
     </button>

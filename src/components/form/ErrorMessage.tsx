@@ -15,7 +15,7 @@ const ErrorMessage = ({ error }: ErrorMessageType) => {
         gap: '20px',
         alignItems: 'center',
       }}>
-      <div style={{ maxWidth: 'calc(290px - 4*20 + 4)' }}>{error}</div>
+      <div style={{ width: '100%' }}>{error}</div>
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <WarningIcon color={ColorPalette.ERROR} />
       </div>

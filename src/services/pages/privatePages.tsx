@@ -1,3 +1,6 @@
+import DecksIcon from '../../assets/icons/DecksIcon';
+import FriendsIcon from '../../assets/icons/FriendsIcon';
+import HomeIcon from '../../assets/icons/HomeIcon';
 import { IPage } from '../../model/page';
 import DecksPage from '../../page/DecksPage';
 import FriendsPage from '../../page/FriendsPage';
@@ -10,25 +13,29 @@ export const privatePages: IPage[] = [
     name: 'home',
     url: 'home',
     component: <HomePage />,
-    isDisplayedOnNavbar: true,
+    icon: color => <HomeIcon color={color} />,
+    isNavbarDisplayed: true,
   },
   {
     name: 'decks',
     url: 'decks',
     component: <DecksPage />,
-    isDisplayedOnNavbar: true,
+    icon: color => <DecksIcon color={color} />,
+    isNavbarDisplayed: true,
   },
   {
     name: 'friends',
     url: 'friends',
     component: <FriendsPage />,
-    isDisplayedOnNavbar: true,
+    icon: color => <FriendsIcon color={color} />,
+    isNavbarDisplayed: true,
   },
   {
     name: 'settings',
     url: 'settings',
     component: <SettingsPage />,
-    isDisplayedOnNavbar: true,
+    icon: color => <HomeIcon color={color} />,
+    isNavbarDisplayed: true,
   },
   {
     name: 'test',

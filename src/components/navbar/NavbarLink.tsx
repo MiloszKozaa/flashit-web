@@ -3,7 +3,7 @@ import './NavbarLink.css';
 
 type NavbarLinkType = {
   path: string;
-  IconComponent: JSX.Element;
+  IconComponent?: JSX.Element;
 };
 
 const NavbarLink = ({ path, IconComponent }: NavbarLinkType) => {
