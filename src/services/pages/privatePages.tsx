@@ -1,6 +1,7 @@
 import DecksIcon from '../../assets/icons/DecksIcon';
 import FriendsIcon from '../../assets/icons/FriendsIcon';
 import HomeIcon from '../../assets/icons/HomeIcon';
+import SettingsIcon from '../../assets/icons/SettingsIcon';
 import { IPage } from '../../model/page';
 import DecksPage from '../../page/DecksPage';
 import FriendsPage from '../../page/FriendsPage';
@@ -34,7 +35,7 @@ export const privatePages: IPage[] = [
     name: 'settings',
     url: 'settings',
     component: <SettingsPage />,
-    icon: color => <HomeIcon color={color} />,
+    icon: color => <SettingsIcon color={color} />,
     isNavbarDisplayed: true,
   },
   {

@@ -2,6 +2,15 @@
   position: fixed;
   bottom: 0;
   display: flex;
+  justify-content: center;
   height: 75px;
-  margin: 0 30px;
+  width: calc(400px);
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 400px) {
+  .Navbar-wrapper {
+    width: 100%;
+    border-radius: 0;
+  }
 }
