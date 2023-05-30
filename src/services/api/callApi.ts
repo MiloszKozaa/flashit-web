@@ -5,7 +5,8 @@ export const callApi = async <TData>(
   method: 'POST' | 'DELETE' | 'PATCH',
   body: any
 ) => {
-  const response = await fetch(`http://localhost:9002/${endpoint}`, {
+  // const response = await fetch(`http://localhost:9002/${endpoint}`, {
+    const response = await fetch(`https://flashit-server.vercel.app/${endpoint}`, {
     method: method,
     headers: {
       'Content-Type': 'application/json',
@@ -20,7 +21,8 @@ export const callApi = async <TData>(
 };
 
 export const getApi = async <TData>(endpoint: string) => {
-  const response = await fetch(`http://localhost:9002/${endpoint}`, {
+  // const response = await fetch(`http://localhost:9002/${endpoint}`, {
+    const response = await fetch(`https://flashit-server.vercel.app/${endpoint}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
