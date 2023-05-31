@@ -1,6 +1,9 @@
 import React from 'react';
 import ErrorMessage from './ErrorMessage';
 import './PublicForm.css';
+import Button from '../functional/Button';
+import { ColorPalette } from '../../model/colors';
+import ArrowIcon from '../../assets/icons/ArrowIcon';
 
 type PublicFormType = {
   onSubmit: () => void;

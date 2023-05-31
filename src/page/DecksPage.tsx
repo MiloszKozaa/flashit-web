@@ -1,5 +1,7 @@
+import Decks from '../modules/Decks/Decks';
+
 const DecksPage = () => {
-  return <div className=''>Decks Page</div>;
+  return <Decks />;
 };
 
 export default DecksPage;

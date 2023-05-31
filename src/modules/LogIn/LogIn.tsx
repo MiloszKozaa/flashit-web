@@ -75,12 +75,10 @@ const LogIn = () => {
         backgroundColor={ColorPalette.PRIMARY}
         IconComponent={<ArrowIcon color={ColorPalette.EMPTY} />}
       />
-      {/* <LinkToForm
-        text={`Don't have an account?`}
-        link='Register'
+      <LinkToForm
+        text={`Don't have an account? Register`}
         path='register'
-        color={ColorPalette.PRIMARY}
-      /> */}
+      />
     </PublicForm>
   );
 };
