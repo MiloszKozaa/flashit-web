@@ -1,9 +1,7 @@
 import { ColorPalette } from '../../model/colors';
-import { getIconByName } from '../../services/icons/getIconByName';
 import { privatePages } from '../../services/pages/privatePages';
 import NavbarLink from './NavbarLink';
 import './Navbar.css';
-import { useResolvedPath } from 'react-router-dom';
 
 const Navbar = () => {
   const pages = privatePages.filter(privatePage => !!privatePage.icon);

@@ -2,16 +2,19 @@
   display: flex;
   width: 100%;
   border-top: 2px solid;
+  transition: 0.3s;
 }
 
 .NavbarLink-wrapper:last-child {
   border-right: 2px solid;
   border-radius: 0 20px 0 0;
+  transition: 0.3s;
 }
 
 .NavbarLink-wrapper:first-child {
   border-left: 2px solid;
   border-radius: 20px 0 0 0;
+  transition: 0.3s;
 }
 
 .NavbarLink-wrapper > a {
@@ -20,6 +23,7 @@
   align-items: center;
   height: 100%;
   width: 100%;
+  transition: 0.3s;
 }
 
 @media only screen and (max-width: 400px) {
@@ -27,14 +31,17 @@
     display: flex;
     width: 100%;
     border-top: 2px solid;
+    transition: 0.3s;
   }
   .NavbarLink-wrapper:last-child {
     border-right: none;
     border-radius: 0;
+    transition: 0.3s;
   }
-  
+
   .NavbarLink-wrapper:first-child {
     border-left: none;
     border-radius: 0;
+    transition: 0.3s;
   }
 }
