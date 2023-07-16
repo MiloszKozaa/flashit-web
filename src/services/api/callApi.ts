@@ -18,11 +18,14 @@ export const callApi = async <TData>(
   method: 'GET' | 'POST' | 'PATCH' | 'DELETE',
   body: {} | null
 ) => {
-  // const response = await fetch(`https://flashit-server.vercel.app/${endpoint}`, {
   const response = await fetch(
-    `http://localhost:9002/${endpoint}`,
+    `https://flashit-server.vercel.app/${endpoint}`,
     getOptions(method, body)
   );
+  // const response = await fetch(
+  //   `http://localhost:9002/${endpoint}`,
+  //   getOptions(method, body)
+  // );
 
   const data: responseModel<TData> = await response.json();
 
