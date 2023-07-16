@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react';
 import { ColorPalette, InputColors } from '../../model/colors';
 import './Input.scss';
 import { FiAlertCircle } from 'react-icons/fi';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { toastOptions } from '../../services';
 
 type InputType = {
   type: string;
@@ -36,7 +39,13 @@ const Input = ({ id, type, yup, placeholder, error, icon }: InputType) => {
           onBlur={() => setStyleByError(error, InputColors.DEFAULT)}
         />
       </div>
-      {error && <FiAlertCircle />}
+      {error && (
+        <FiAlertCircle
+          onClick={() =>
+            toast.error(error, { ...toastOptions, toastId: error })
+          }
+        />
+      )}
     </div>
   );
 };

@@ -22,7 +22,7 @@ const Register = () => {
     mutationKey: ['user'],
     mutationFn: (body: IPublicForm) => callApi('user/', 'POST', body),
     onError: () => {
-      toast.error('Failed to fetch', toastOptions);
+      toast.error('Failed to fetch. Database error', toastOptions);
     },
   });
 

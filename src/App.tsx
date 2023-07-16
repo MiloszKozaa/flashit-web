@@ -48,6 +48,7 @@ function App() {
         draggable
         pauseOnHover
         theme='colored'
+        limit={3}
       />
     </div>
   );

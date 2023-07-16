@@ -4,6 +4,7 @@ import FormLink from './components/FormLink';
 import { Button } from '..';
 import { FiChevronRight } from 'react-icons/fi';
 import { ButtonColors } from '../../model/colors';
+import { ToastContainer } from 'react-toastify';
 
 interface IUserForm {
   onSubmit: () => void;
