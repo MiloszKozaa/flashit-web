@@ -1,11 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import './index.css';
+import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { privatePages } from './services/pages/privatePages';
-import { publicPages } from './services/pages/publicPages';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 
@@ -19,7 +17,7 @@ root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <App privatePages={privatePages} publicPages={publicPages} />
+        <App />
       </BrowserRouter>
       <ReactQueryDevtools />
     </QueryClientProvider>

@@ -1,0 +1,17 @@
+@import '../../styles/mixins.scss';
+
+.UserForm {
+  @include flex(column, center, center);
+  gap: 30px;
+  .header {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .describe {
+    @include flex(column, center, center);
+    text-align: center;
+    opacity: 70%;
+    width: 90%;
+  }
+}

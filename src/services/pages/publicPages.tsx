@@ -1,28 +1,30 @@
 import { IPage } from '../../model/page';
-import LandingPage from '../../page/LandingPage';
-import LogInPage from '../../page/LogInPage';
-import NotFoundPage from '../../page/NotFoundPage';
-import RegisterPage from '../../page/RegisterPage';
+// import Landing from '../../pages/Landing/Landing';
+// import LogIn from '../../pages/LogIn/LogIn';
+// import Register from '../../pages/Register/Register';
+import { Landing, LogIn, Register } from '../../pages';
 
-export const publicPages: IPage[] = [
+const publicPages: IPage[] = [
   {
-    name: 'landingPage',
+    name: 'landing',
     url: '',
-    component: <LandingPage />,
+    component: <Landing />,
   },
   {
     name: 'login',
     url: 'login',
-    component: <LogInPage />,
+    component: <LogIn />,
   },
   {
     name: 'register',
     url: 'register',
-    component: <RegisterPage />,
+    component: <Register />,
   },
-  {
-    name: 'notFound',
-    url: '*',
-    component: <NotFoundPage />,
-  },
+  // {
+  //   name: 'notFound',
+  //   url: '*',
+  //   component: NotFoundPage,
+  // },
 ];
+
+export default publicPages;

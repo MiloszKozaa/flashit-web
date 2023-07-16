@@ -1,0 +1,49 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/responsive.scss';
+@import '../../styles/colors.scss';
+@import '../../styles/values.scss';
+
+.FlashIt-Input-default,
+.FlashIt-Input-error,
+.FlashIt-Input-focus {
+  @include flex(row, space-between, center);
+  width: 100%;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 0 20px;
+  border-radius: 10px;
+  border: 2px solid;
+  transition: 0.3s ease-in-out;
+  & svg {
+    margin: 20px 0;
+  }
+  & .icon-input {
+    @include flex(row, flex-start, center);
+    width: 100%;
+    & svg {
+      margin: 20px 0;
+    }
+    & input,
+    & input:focus {
+      display: flex;
+      padding: 0 20px;
+      height: 100%;
+      width: 100%;
+      font-size: 18px;
+      font-weight: 400;
+    }
+  }
+}
+
+.FlashIt-Input-default {
+  border-color: $d-gray;
+  color: $d-gray;
+}
+.FlashIt-Input-error {
+  border-color: $red;
+  color: $red;
+}
+.FlashIt-Input-focus {
+  border-color: $primary;
+  color: $primary;
+}

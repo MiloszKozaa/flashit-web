@@ -1,0 +1,17 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/responsive.scss';
+@import '../../styles/colors.scss';
+@import '../../styles/values.scss';
+
+.BottomBar {
+  @include flex(row, space-between, center);
+  position: fixed;
+  bottom: 0;
+  height: 75px;
+  width: $breakpoint-phone;
+  background-color: $d-background;
+
+  @media only screen and (max-width: $breakpoint-phone) {
+    width: 100%;
+  }
+}

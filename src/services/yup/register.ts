@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-export const yupRegister = yup.object({
+export const register = yup.object({
   email: yup
     .string()
     .required('Email is a required field')

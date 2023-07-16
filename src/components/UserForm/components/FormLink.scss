@@ -1,0 +1,14 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/responsive.scss';
+@import '../../../styles/colors.scss';
+@import '../../../styles/values.scss';
+
+.FormLink-wrapper {
+  text-align: center;
+  
+  a {
+    font-weight: 400;
+    color: $white;
+    opacity: 70%;
+  }
+}

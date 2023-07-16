@@ -1,46 +1,40 @@
-import DecksIcon from '../../assets/icons/DecksIcon';
-import FriendsIcon from '../../assets/icons/FriendsIcon';
-import HomeIcon from '../../assets/icons/HomeIcon';
-import SettingsIcon from '../../assets/icons/SettingsIcon';
 import { IPage } from '../../model/page';
-import DecksPage from '../../page/DecksPage';
-import FriendsPage from '../../page/FriendsPage';
-import HomePage from '../../page/HomePage';
-import SettingsPage from '../../page/SettingsPage';
-import TestPage from '../../page/TestPage';
+import { FaHouse, FaGraduationCap, FaUserGroup, FaGear } from 'react-icons/fa6';
+// import Home from '../../pages/Home/Home';
+// import Decks from '../../pages/Decks/Decks';
+// import Settings from '../../pages/Settings/Settings';
+// import Friends from '../../pages/Friends/Friends';
+import { Decks, Friends, Home, Settings } from '../../pages';
 
-export const privatePages: IPage[] = [
+const privatePages: IPage[] = [
   {
     name: 'home',
     url: 'home',
-    component: <HomePage />,
-    icon: color => <HomeIcon color={color} />,
+    component: <Home />,
     isNavbarDisplayed: true,
+    icon: <FaHouse />,
   },
   {
     name: 'decks',
     url: 'decks',
-    component: <DecksPage />,
-    icon: color => <DecksIcon color={color} />,
+    component: <Decks />,
     isNavbarDisplayed: true,
+    icon: <FaGraduationCap />,
   },
   {
     name: 'friends',
     url: 'friends',
-    component: <FriendsPage />,
-    icon: color => <FriendsIcon color={color} />,
+    component: <Friends />,
     isNavbarDisplayed: true,
+    icon: <FaUserGroup />,
   },
   {
     name: 'settings',
     url: 'settings',
-    component: <SettingsPage />,
-    icon: color => <SettingsIcon color={color} />,
+    component: <Settings />,
     isNavbarDisplayed: true,
-  },
-  {
-    name: 'test',
-    url: 'test',
-    component: <TestPage />,
+    icon: <FaGear />,
   },
 ];
+
+export default privatePages;

@@ -1,0 +1,23 @@
+@import '../../styles/mixins.scss';
+
+.Landing-header {
+  @include flex(column, center, center);
+  .text {
+    font-weight: 300;
+    font-size: 25px;
+    opacity: 90%;
+  }
+
+  .logo {
+    font-size: 50px;
+    font-weight: 700;
+    margin: 20px 0;
+    text-align: center;
+  }
+}
+
+.Landing-buttons {
+  @include flex(column, center, center);
+  width: 80%;
+  gap: 30px;
+}

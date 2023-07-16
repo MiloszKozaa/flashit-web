@@ -1,5 +1,9 @@
-export type responseModel<TData> = {
-  status: number;
-  data: TData;
-  error: string;
-}
+export type responseModel<TData> =
+  | {
+      status: 'success';
+      data: TData;
+    }
+  | {
+      status: 'error';
+      message: string;
+    };

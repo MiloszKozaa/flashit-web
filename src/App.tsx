@@ -1,18 +1,12 @@
 import { Route, Routes } from 'react-router-dom';
-import './App.css';
-import { IPage } from './model/page';
-import PrivateRoute from './components/PrivateRoute';
+import './App.scss';
+import { PrivateRoute } from './components';
 import { ColorPalette } from './model/colors';
 import useVH from 'react-viewport-height';
-import Navbar from './components/navbar/Navbar';
-import { Fragment } from 'react';
+import { privatePages, publicPages } from './services';
+import { ToastContainer } from 'react-toastify';
 
-interface IPages {
-  privatePages: IPage[];
-  publicPages: IPage[];
-}
-
-function App({ privatePages, publicPages }: IPages) {
+function App() {
   const vh = useVH();
 
   return (
@@ -24,23 +18,37 @@ function App({ privatePages, publicPages }: IPages) {
       }}>
       <div className='App'>
         <Routes>
-          {privatePages.map(({ url, component, isNavbarDisplayed }, key) => (
-            <Route
-              key={key}
-              path={`/${url}`}
-              element={
-                <PrivateRoute
-                  PrivateComponent={component}
-                  isNavbarDisplayed={!!isNavbarDisplayed}
-                />
-              }
-            />
-          ))}
-          {publicPages.map(({ url, component }, key) => (
-            <Route key={key} path={`/${url}`} element={component} />
-          ))}
+          {privatePages &&
+            privatePages.map(({ url, component, isNavbarDisplayed }, key) => (
+              <Route
+                key={key}
+                path={`/${url}`}
+                element={
+                  <PrivateRoute
+                    PrivateComponent={component}
+                    isNavbarDisplayed={!!isNavbarDisplayed}
+                  />
+                }
+              />
+            ))}
+          {publicPages &&
+            publicPages.map(({ url, component }, key) => (
+              <Route key={key} path={`/${url}`} element={component} />
+            ))}
         </Routes>
       </div>
+      <ToastContainer
+        position='top-center'
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme='colored'
+      />
     </div>
   );
 }

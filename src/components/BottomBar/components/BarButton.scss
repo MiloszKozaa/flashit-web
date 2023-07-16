@@ -1,0 +1,51 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/colors.scss';
+@import '../../../styles/values.scss';
+@import '../../../styles/responsive.scss';
+
+.BarButton,
+.BarButton-active {
+  @include flex(row, center, center);
+  width: 100%;
+  height: 100%;
+  border-top: $border-width solid;
+  color: $d-gray;
+  transition: 0.3s;
+}
+
+.BarButton:last-child,
+.BarButton-active:last-child {
+  border-right: $border-width solid;
+  border-radius: 0 20px 0 0;
+}
+
+.BarButton:first-child,
+.BarButton-active:first-child {
+  border-left: $border-width solid;
+  border-radius: 20px 0 0 0;
+}
+
+.BarButton {
+  border-color: $d-gray;
+}
+
+.BarButton-active,
+.BarButton-active:first-child,
+.BarButton-active:last-child {
+  border-color: $primary;
+  color: $primary;
+}
+
+@media only screen and (max-width: $breakpoint-phone) {
+  .BarButton:last-child,
+  .BarButton-active:last-child {
+    border-right: none;
+    border-radius: 0;
+  }
+
+  .BarButton:first-child,
+  .BarButton-active:first-child {
+    border-left: none;
+    border-radius: 0;
+  }
+}

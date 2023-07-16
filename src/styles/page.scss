@@ -1,0 +1,17 @@
+@import './mixins.scss';
+
+.FlashIt-page-wrapper {
+  @include flex(column, flex-start, center);
+  padding: 20px 0;
+  width: 100%;
+  gap: 30px;
+  // background-color: aqua;
+}
+
+.FlashIt-page-center-wrapper {
+  @include flex(column, center, center);
+  padding: 20px 0;
+  width: 100%;
+  gap: 30px;
+  // background-color: aqua;
+}

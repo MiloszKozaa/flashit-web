@@ -3,7 +3,19 @@ export enum ColorPalette {
   PRIMARY = '#6D60F8', // purple
   ACCESSORY = '#383742', //input placeholder need changes
   ERROR = '#FE413C',
-  SUCCESS = '41DE64',
+  SUCCESS = '#41DE64',
   INVALID = '#FFBC2C',
   EMPTY = '#FFFFFF',
+}
+
+export enum ButtonColors {
+  DEFAULT = 'default',
+  PRIMARY = 'primary',
+  ACCESSORY = 'accessory',
+}
+
+export enum InputColors {
+  DEFAULT = 'default',
+  ERROR = 'error',
+  FOCUS = 'focus'
 }

@@ -1,0 +1,17 @@
+@import './styles/responsive.scss';
+
+.App-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  width: $breakpoint-phone;
+  padding: 0px 35px;
+}
