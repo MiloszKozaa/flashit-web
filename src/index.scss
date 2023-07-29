@@ -33,22 +33,6 @@ input {
   outline: none;
 }
 
-input::placeholder {
-  font-size: 18px;
-  color: #383742;
-  font-weight: 400;
-}
-
-:-webkit-autofill,
-:-webkit-autofill:hover,
-:-webkit-autofill:focus {
-  border: 0px;
-  outline: none;
-  -webkit-box-shadow: 0 0 0px 1000px #201f29 inset;
-  -webkit-text-fill-color: #fff;
-  transition: background-color 60000000s 0s, color 60000000s 0s;
-}
-
 svg {
   height: 25px;
   width: 25px;

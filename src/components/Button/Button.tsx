@@ -1,45 +1,31 @@
-import { Link } from 'react-router-dom';
 import './Button.scss';
-import ButtonContent from './components/ButtonContent';
-import { Spinner } from '..';
 import { ButtonColors } from '../../model/colors';
+import { ReactNode } from 'react';
+import ButtonContent from './components/ButtonContent';
+import ButtonIcon from './components/ButtonIcon';
+import ButtonText from './components/ButtonText';
 
 type ButtonType = {
-  name?: string;
-  icon: JSX.Element;
+  content?: ReactNode;
   onClick?: () => void;
-  style: ButtonColors;
-  isOpposite?: boolean;
-  isLoading?: boolean;
+  colorStyle: ButtonColors;
+  maxWidth?: boolean;
 };
 
-const Button = ({
-  name,
-  icon,
-  onClick,
-  style,
-  isOpposite,
-  isLoading,
-}: ButtonType) => {
-  if (isLoading) {
-    return (
-      <button className={`FlashIt-button-icon FlashIt-button-${style}`}>
-        <Spinner colorStyle={style} />
-      </button>
-    );
-  }
-
+const Button = ({ maxWidth, content, onClick, colorStyle }: ButtonType) => {
   return (
     <button
-      onClick={!isLoading && onClick}
-      className={`FlashIt-button-${
-        name ? 'named' : 'icon'
-      } FlashIt-button-${style}`}>
-      {isOpposite && icon}
-      {name}
-      {!isOpposite && icon}
+      onClick={onClick}
+      className={`FlashIt-button-${colorStyle} ${
+        maxWidth ? 'FlashIt-button-maxWidth' : ''
+      }`}>
+      {content}
     </button>
   );
 };
+
+Button.Content = ButtonContent;
+Button.Icon = ButtonIcon;
+Button.Text = ButtonText;
 
 export default Button;

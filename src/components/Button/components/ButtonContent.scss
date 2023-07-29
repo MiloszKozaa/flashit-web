@@ -3,42 +3,7 @@
 @import '../../../styles/colors.scss';
 @import '../../../styles/values.scss';
 
-.inner-wrapper,
-.inner-wrapper-withoutName,
-.inner-wrapper-highlighted,
-.inner-wrapper-highlighted-withoutName {
+.FlashIt-ButtonContent {
   @include flex(row, space-between, center);
-  display: inline-grid;
-  grid-template-columns: auto auto;
-  padding: 20px;
-  border-radius: 10px;
-  font-weight: 600;
-
-  .name {
-    width: 100%;
-    justify-content: flex-start;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-}
-
-.inner-wrapper,
-.inner-wrapper-withoutName {
-  background-color: $white;
-  color: $d-background;
-}
-
-.inner-wrapper {
-  width: 100%;
-}
-
-.inner-wrapper-highlighted,
-.inner-wrapper-highlighted-withoutName {
-  background-color: $primary;
-  color: $white;
-}
-
-.inner-wrapper-highlighted {
   width: 100%;
 }

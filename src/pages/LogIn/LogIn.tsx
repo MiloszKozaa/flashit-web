@@ -5,10 +5,11 @@ import { useForm } from 'react-hook-form';
 import { useMutation } from 'react-query';
 import { callApi } from '../../services/api/callApi';
 import { useNavigate } from 'react-router-dom';
-import { yup } from '../../services';
+import { setToastOnFetchError, toastOptions, yup } from '../../services';
 import { IPublicForm } from '../../model/publicForm';
 import { FiChevronRight, FiLock, FiMail } from 'react-icons/fi';
 import { ButtonColors } from '../../model/colors';
+import { toast } from 'react-toastify';
 
 const LogIn = () => {
   const navigate = useNavigate();
@@ -16,6 +17,7 @@ const LogIn = () => {
   const { mutate, data, isLoading } = useMutation({
     mutationKey: ['user'],
     mutationFn: (body: IPublicForm) => callApi('user/login', 'POST', body),
+    onError: errors => setToastOnFetchError(errors),
   });
 
   const [formError, setFormError] = useState<string>();
@@ -39,6 +41,9 @@ const LogIn = () => {
       if (!isLoading && data.status === 'success') {
         console.log('Navigating to home');
         navigate('/home');
+      }
+      if (!isLoading && data.status === 'error') {
+        toast.error(data.message, toastOptions);
       }
     }
   }, [data]);

@@ -13,7 +13,9 @@
   padding: 0 20px;
   border-radius: 10px;
   border: 2px solid;
-  transition: 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+  background-color: $d-secondary;
+  border-color: $d-secondary;
   & svg {
     margin: 20px 0;
   }
@@ -32,18 +34,46 @@
       font-size: 18px;
       font-weight: 400;
     }
+    & input::placeholder {
+      font-size: 18px;
+      color: $d-accent;
+      font-weight: 400;
+    }
+    & input:-webkit-autofill,
+    & input:-webkit-autofill:hover,
+    & input:-webkit-autofill:focus {
+      font-size: 18px;
+  font-weight: 400;
+      border: 0px;
+      outline: none;
+      -webkit-box-shadow: 0 0 0px 1000px $d-secondary inset;
+      -webkit-text-fill-color: #fff;
+      transition: background-color 60000000s 0s, color 60000000s 0s;
+    }
   }
 }
 
 .FlashIt-Input-default {
-  border-color: $d-gray;
-  color: $d-gray;
+  color: $d-accent;
 }
 .FlashIt-Input-error {
   border-color: $red;
+  background-color: rgba($red, 0.2);
   color: $red;
+  & .icon-input {
+    & input:-webkit-autofill,
+    & input:-webkit-autofill:hover,
+    & input:-webkit-autofill:focus {
+      font-size: 18px;
+  font-weight: 400;
+      border: 0px;
+      outline: none;
+      -webkit-box-shadow: 0 0 0px 1000px rgba(#fff, 0) inset;
+      -webkit-text-fill-color: #fff;
+      transition: background-color 60000000s 0s, color 60000000s 0s;
+    }
+  }
 }
 .FlashIt-Input-focus {
-  border-color: $primary;
-  color: $primary;
+  color: $d-accent;
 }

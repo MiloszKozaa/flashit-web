@@ -3,21 +3,20 @@
 @import '../../styles/colors.scss';
 @import '../../styles/values.scss';
 
-.FlashIt-button-named,
-.FlashIt-button-icon,
+.FlashIt-button-maxWidth,
 .FlashIt-button-default,
 .FlashIt-button-primary,
 .FlashIt-button-accessory {
-  @include flex(row, space-between, center);
+  @include flex(row, center, center);
   background-color: none;
-  width: 100%;
+  width: min-content;
   padding: 20px;
   border-radius: 10px;
   transition: width 0.3s ease-in-out;
 }
 
-.FlashIt-button-icon {
-  width: min-content;
+.FlashIt-button-maxWidth {
+  width: 100%;
 }
 
 .FlashIt-button-default {

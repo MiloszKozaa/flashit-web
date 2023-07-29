@@ -1,10 +1,11 @@
 import React from 'react';
 import './UserForm.scss';
 import FormLink from './components/FormLink';
-import { Button } from '..';
+import { Button, Spinner } from '..';
 import { FiChevronRight } from 'react-icons/fi';
 import { ButtonColors } from '../../model/colors';
 import { ToastContainer } from 'react-toastify';
+import ButtonIcon from '../Button/components/ButtonIcon';
 
 interface IUserForm {
   onSubmit: () => void;
@@ -33,10 +34,18 @@ const UserForm = ({
       <div className='describe'>{description}</div>
       {children}
       <Button
-        name={buttonName}
-        icon={<FiChevronRight />}
-        style={buttonStyle}
-        isLoading={isLoading}
+        colorStyle={buttonStyle}
+        maxWidth={!isLoading}
+        content={
+          !isLoading ? (
+            <Button.Content>
+              <Button.Text text={buttonName} />
+              <Button.Icon icon={<FiChevronRight />} />
+            </Button.Content>
+          ) : (
+            <ButtonIcon icon={<Spinner colorStyle={buttonStyle} />} />
+          )
+        }
       />
       <FormLink text={link.name} path={link.path} />
     </form>

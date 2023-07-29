@@ -3,7 +3,12 @@ import { Button } from '../../components';
 // import Input from '../../components/functional/Input';
 import { UserForm, Input } from '../../components';
 import { ColorPalette, ButtonColors } from '../../model/colors';
-import { yup, callApi, toastOptions } from '../../services';
+import {
+  yup,
+  callApi,
+  toastOptions,
+  setToastOnFetchError,
+} from '../../services';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { useMutation } from 'react-query';
@@ -21,9 +26,7 @@ const Register = () => {
   const { mutate, data, isLoading } = useMutation({
     mutationKey: ['user'],
     mutationFn: (body: IPublicForm) => callApi('user/', 'POST', body),
-    onError: () => {
-      toast.error('Failed to fetch. Database error', toastOptions);
-    },
+    onError: errors => setToastOnFetchError(errors),
   });
 
   const {
@@ -49,7 +52,7 @@ const Register = () => {
         navigate('/login');
       }
       if (!isLoading && data.status === 'error') {
-        console.error('Failed to register');
+        console.log(data.message);
         toast.error(data.message, toastOptions);
       }
     }

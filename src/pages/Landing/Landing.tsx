@@ -18,16 +18,26 @@ const Landing = () => {
       </div>
       <div className='Landing-buttons'>
         <Button
-          name='Create account'
-          icon={<FiChevronRight />}
-          style={ButtonColors.DEFAULT}
+          colorStyle={ButtonColors.DEFAULT}
           onClick={() => goTo(navigate, 'register')}
+          maxWidth
+          content={
+            <Button.Content>
+              <Button.Text text='Register' />
+              <Button.Icon icon={<FiChevronRight />} />
+            </Button.Content>
+          }
         />
         <Button
-          name='Log In'
-          icon={<FiChevronRight />}
-          style={ButtonColors.PRIMARY}
+          colorStyle={ButtonColors.PRIMARY}
           onClick={() => goTo(navigate, 'login')}
+          maxWidth
+          content={
+            <Button.Content>
+              <Button.Text text='Log In' />
+              <Button.Icon icon={<FiChevronRight />} />
+            </Button.Content>
+          }
         />
       </div>
     </div>
