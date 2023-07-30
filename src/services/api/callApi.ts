@@ -6,12 +6,11 @@ export const callApi = async <TData>(
   method: 'GET' | 'POST' | 'PATCH' | 'DELETE',
   body: {} | null
 ) => {
-  console.log(process.env.NODE_ENV);
   const response = await fetch(
     `${
       process.env.NODE_ENV === 'production'
         ? 'https://flashit-server.vercel.app/'
-        : 'http://localhost:9002/'
+        : process.env.REACT_APP_DEV_API_URL
     }${endpoint}`,
     getOptions(method, body)
   );
