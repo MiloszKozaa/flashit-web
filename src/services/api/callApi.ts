@@ -13,5 +13,6 @@ export const callApi = async <TData>(
 
   const data: responseModel<TData> = await response.json();
 
+
   return data;
 };

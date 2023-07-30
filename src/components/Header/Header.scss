@@ -1,0 +1,7 @@
+@import '../../styles/mixins.scss';
+
+.FlashIt-Header {
+  @include flex(row, flex-start, center);
+  width: 100%;
+  gap: 20px;
+}

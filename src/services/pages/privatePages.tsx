@@ -5,6 +5,7 @@ import { FaHouse, FaGraduationCap, FaUserGroup, FaGear } from 'react-icons/fa6';
 // import Settings from '../../pages/Settings/Settings';
 // import Friends from '../../pages/Friends/Friends';
 import { Decks, Friends, Home, Settings } from '../../pages';
+import { FiLayers } from 'react-icons/fi';
 
 const privatePages: IPage[] = [
   {
@@ -19,7 +20,7 @@ const privatePages: IPage[] = [
     url: 'decks',
     component: <Decks />,
     isNavbarDisplayed: true,
-    icon: <FaGraduationCap />,
+    icon: <FiLayers />,
   },
   {
     name: 'friends',

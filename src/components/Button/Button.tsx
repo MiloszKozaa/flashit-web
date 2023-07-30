@@ -1,9 +1,7 @@
 import './Button.scss';
 import { ButtonColors } from '../../model/colors';
 import { ReactNode } from 'react';
-import ButtonContent from './components/ButtonContent';
-import ButtonIcon from './components/ButtonIcon';
-import ButtonText from './components/ButtonText';
+import { ButtonContent, ButtonIcon, ButtonText } from './components';
 
 type ButtonType = {
   content?: ReactNode;

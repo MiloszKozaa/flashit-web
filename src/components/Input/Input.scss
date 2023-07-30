@@ -23,7 +23,7 @@
     @include flex(row, flex-start, center);
     width: 100%;
     & svg {
-      margin: 20px 0;
+      margin: 15px 0;
     }
     & input,
     & input:focus {
@@ -43,7 +43,7 @@
     & input:-webkit-autofill:hover,
     & input:-webkit-autofill:focus {
       font-size: 18px;
-  font-weight: 400;
+      font-weight: 400;
       border: 0px;
       outline: none;
       -webkit-box-shadow: 0 0 0px 1000px $d-secondary inset;
@@ -65,7 +65,7 @@
     & input:-webkit-autofill:hover,
     & input:-webkit-autofill:focus {
       font-size: 18px;
-  font-weight: 400;
+      font-weight: 400;
       border: 0px;
       outline: none;
       -webkit-box-shadow: 0 0 0px 1000px rgba(#fff, 0) inset;

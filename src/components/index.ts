@@ -1,8 +1,9 @@
 import BottomBar from './BottomBar/BottomBar';
 import Button from './Button/Button';
+import Header from './Header/Header';
 import Input from './Input/Input';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import Spinner from './Spinner/Spinner';
 import UserForm from './UserForm/UserForm';
 
-export { UserForm, BottomBar, PrivateRoute, Button, Spinner, Input };
+export { UserForm, BottomBar, PrivateRoute, Button, Spinner, Input, Header };

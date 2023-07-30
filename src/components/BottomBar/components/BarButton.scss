@@ -9,8 +9,9 @@
   width: 100%;
   height: 100%;
   border-top: $border-width solid;
-  color: $d-gray;
-  transition: 0.3s;
+  color: $d-accent;
+  background: none;
+  transition: border-color 0.3s;
 }
 
 .BarButton:last-child,
@@ -26,7 +27,8 @@
 }
 
 .BarButton {
-  border-color: $d-gray;
+  border-color: $d-accent;
+  transition: 0.3s;
 }
 
 .BarButton-active,
@@ -35,6 +37,13 @@
   border-color: $primary;
   color: $primary;
 }
+
+// .BarButton:hover {
+//   & svg {
+//     transform: scale(1.2);
+//     transition: 0.3s;
+//   }
+// }
 
 @media only screen and (max-width: $breakpoint-phone) {
   .BarButton:last-child,

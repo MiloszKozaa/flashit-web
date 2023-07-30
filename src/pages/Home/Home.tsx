@@ -1,7 +1,6 @@
 import { useQuery } from 'react-query';
 
-import './Home.css';
-import { callApi } from '../../services';
+import { callApi, setToastOnFetchError } from '../../services';
 import { IUser } from '../../model/user';
 import toast from 'react-hot-toast';
 
@@ -9,6 +8,7 @@ const Home = () => {
   const { data, isLoading, error } = useQuery({
     queryKey: ['user-data'],
     queryFn: () => callApi<IUser>('user', 'GET', null),
+    onError: error => setToastOnFetchError(error),
   });
 
   if (isLoading) return <div className=''>Loading...</div>;

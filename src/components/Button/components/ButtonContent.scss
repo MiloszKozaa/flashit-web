@@ -1,9 +1,0 @@
-@import '../../../styles/mixins.scss';
-@import '../../../styles/responsive.scss';
-@import '../../../styles/colors.scss';
-@import '../../../styles/values.scss';
-
-.FlashIt-ButtonContent {
-  @include flex(row, space-between, center);
-  width: 100%;
-}

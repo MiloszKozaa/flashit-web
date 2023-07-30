@@ -5,7 +5,6 @@ import { Button, Spinner } from '..';
 import { FiChevronRight } from 'react-icons/fi';
 import { ButtonColors } from '../../model/colors';
 import { ToastContainer } from 'react-toastify';
-import ButtonIcon from '../Button/components/ButtonIcon';
 
 interface IUserForm {
   onSubmit: () => void;
@@ -43,7 +42,7 @@ const UserForm = ({
               <Button.Icon icon={<FiChevronRight />} />
             </Button.Content>
           ) : (
-            <ButtonIcon icon={<Spinner colorStyle={buttonStyle} />} />
+            <Button.Icon icon={<Spinner colorStyle={buttonStyle} />} />
           )
         }
       />

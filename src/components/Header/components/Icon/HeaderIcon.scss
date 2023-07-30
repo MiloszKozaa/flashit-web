@@ -1,0 +1,5 @@
+@import '../../../../styles/mixins.scss';
+
+.FlashIt-HeaderIcon {
+  @include flex(row, center, center);
+}

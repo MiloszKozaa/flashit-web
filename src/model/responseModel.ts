@@ -1,7 +1,7 @@
 export type responseModel<TData> =
   | {
       status: 'success';
-      data: TData;
+      content: TData;
     }
   | {
       status: 'error';

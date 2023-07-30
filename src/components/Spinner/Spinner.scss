@@ -8,13 +8,13 @@
   & .path-default,
   & .path-primary,
   & .path-accessory {
-    stroke: $d-gray;
+    stroke: $d-secondary;
     stroke-linecap: round;
     animation: dash 1.5s ease-in-out infinite;
   }
 
   & .path-default {
-    stroke: $d-gray;
+    stroke: $d-secondary;
   }
   & .path-primary {
     stroke: $white;
