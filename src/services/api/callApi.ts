@@ -6,13 +6,17 @@ export const callApi = async <TData>(
   method: 'GET' | 'POST' | 'PATCH' | 'DELETE',
   body: {} | null
 ) => {
+  console.log(process.env.NODE_ENV);
   const response = await fetch(
-    `${process.env.API_URL ?? 'http://localhost:9002/'}${endpoint}`,
+    `${
+      process.env.NODE_ENV === 'production'
+        ? 'https://flashit-server.vercel.app/'
+        : 'http://localhost:9002/'
+    }${endpoint}`,
     getOptions(method, body)
   );
 
   const data: responseModel<TData> = await response.json();
-
 
   return data;
 };

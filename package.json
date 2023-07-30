@@ -12,6 +12,7 @@
     "@types/node": "^16.18.23",
     "@types/react": "^18.0.35",
     "@types/react-dom": "^18.0.11",
+    "dotenv": "^16.3.1",
     "form": "^0.2.4",
     "lottie-react": "^2.4.0",
     "react": "^18.2.0",
