@@ -4,6 +4,8 @@ import { IUser } from '../../model/user';
 import { callApi } from '../../services/api/callApi';
 import { useEffect } from 'react';
 import { BottomBar } from '../';
+import { setToastOnFetchError, toastOptions } from '../../services';
+import { toast } from 'react-toastify';
 
 interface IPrivateRoute {
   PrivateComponent: JSX.Element;
@@ -19,6 +21,7 @@ const PrivateRoute = ({
   const { data, status } = useQuery({
     queryKey: ['user-data'],
     queryFn: () => callApi<IUser>('user/login', 'GET', null),
+    onError: error => setToastOnFetchError(error),
   });
 
   useEffect(() => {
@@ -26,6 +29,7 @@ const PrivateRoute = ({
       console.error(
         'It is a private router. Please login or create new account!'
       );
+      toast.error('Please log in to continue', toastOptions);
       navigate('/login');
     }
   }, [data]);

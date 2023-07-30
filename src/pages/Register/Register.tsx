@@ -68,7 +68,7 @@ const Register = () => {
       isLoading={isLoading}
       link={{ name: 'Have an account? Log In', path: 'login' }}>
       <Input
-        type={'text'}
+        type={'email'}
         id={'email'}
         placeholder={'email'}
         error={errors.email?.message}

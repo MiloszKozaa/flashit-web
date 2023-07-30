@@ -58,7 +58,7 @@ const LogIn = () => {
       buttonStyle={ButtonColors.PRIMARY}
       isLoading={isLoading}>
       <Input
-        type={'text'}
+        type={'email'}
         id={'email'}
         placeholder={'email'}
         error={errors.email?.message}
